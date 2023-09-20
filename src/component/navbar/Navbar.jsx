@@ -1,33 +1,50 @@
-import React, { useContext } from "react";
-import styles from "./navbar.module.css";
-import Image from "next/image";
+import Logo from "@/app/Logos/Logo";
 import Link from "next/link";
 import AuthLinks from "../authLinks/AuthLinks";
 import ThemeToggle from "../themeToggle/ThemeToggle";
-import Search from "../search/Search";
-import { ThemeContext } from "@/context/ThemeContext";
-import Logo from "@/app/Logos/Logo";
+import styles from "./navbar.module.css";
+import styled from "styled-components";
 
 const Navbar = () => {
-  const isDark = "dark";
-  // const { theme } = useContext(ThemeContext);
-  // console.log(theme);
+  // const { toggle, theme } = useContext(ThemeContext);
+
   return (
-    <div className={styles.container}>
-      <div className={styles.social}>
-        <Logo />
+    <div className={styles.content}>
+      <div className={styles.container}>
+        <Logo styles={styles} />
+        <div className={styles.logo}>Ryoon with wisdomTrees</div>
+        <div className={styles.links}>
+          <ThemeToggle />
+          <Link href={"/"} className={styles.links}>
+            Home
+          </Link>
+          <Link href={"/"} className={styles.links}>
+            About
+          </Link>
+          <AuthLinks />
+          {/* <Search /> */}
+        </div>
+        {/* div. .styles */}
       </div>
-      <div className={styles.logo}>Ryoon-log</div>
-      <div className={styles.links}>
-        <ThemeToggle />
-        <Link href={"/"}>Home</Link>
-        <Link href={"/"}>About</Link>
-        <AuthLinks />
-        {/* <Search /> */}
-      </div>
-      {/* div. .styles */}
     </div>
   );
 };
 
 export default Navbar;
+
+// const NavContainer = styled.div`
+// display: flex;
+// align-items: center;
+// justify-content: space-between;
+// height: 80px;
+// /* background-color:#625600 ; */
+// /* margin-top: 20px; */
+// border:1px solid #FFF9E8;
+// margin-left: auto;
+// margin-right: auto;
+// /* background-color: yellowgreen; */
+// padding-left: 80px;
+// padding-right: 80px;
+// border-radius: 24px;
+// color: #E9E3C3;
+// `

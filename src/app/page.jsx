@@ -3,7 +3,8 @@ import Featured from "@/component/featured/Featured";
 import CategoryList from "@/component/categoryList/CategoryList";
 import Link from "next/link";
 import CardList from "@/component/cardList/CardList";
-import Menue from "@/component/Menue/Menue";
+import Menu from "@/component/Menu/Menu";
+import Pagination from "@/component/pagination/Pagination";
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <CategoryList />
       <div className={styles.content}>
         <CardList />
-        <Menue />
+        <Pagination />
+        <Menu />
       </div>
     </div>
   );

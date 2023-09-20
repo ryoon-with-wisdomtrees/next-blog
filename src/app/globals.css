@@ -1,36 +1,27 @@
-/* @font-face {
-    font-family: 'NanumSquare';
-    font-weight: 400;
-    font-style: normal;
-    src: url('/public/assets/fonts/NanumSquare/NanumSquareRoundL.ttf') format('ttf');
-}
-
-@font-face {
-    font-family: 'NanumSquare';
-    font-weight: 700;
-    font-style: normal;
-    src: url('/public/assets/fonts/NanumSquare/NanumSquareRoundOTFEB.ttf') format('ttf');
-} */
-
 :root {
-    --bg:white;
-    --textColor:black;
-    --softBg:#f0f0f0;
-    --softTextColor:#626262;
-}
-
-body {
-   max-width: 100vw;
-   overflow-x: hidden; 
-   /* font-family: 'NanumSqure' */
-}
-
-a{
+    --bg: white;
+    --textColor: black;
+    --softBg: #f0f0f0;
+    --softTextColor: #626262;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  a {
     color: inherit;
     text-decoration: none;
-}
-
-.dark {
+  }
+  
+  .dark {
     --bg: #0f172a;
     --textColor: #ddd;
     --softBg: #1f273a;
@@ -44,46 +35,52 @@ a{
     --softTextColor: #626262;
   }
   
-.container {
-    min-height:100vh;
-    background-color:var(--bg);
+  .container {
+    min-height: 100vh;
+    background-color: var(--bg);
     color: var(--textColor);
-}
-
-.wrapper {
+  }
+  
+  .wrapper {
     max-width: 1536px;
     margin-left: auto;
     margin-right: auto;
-    background-color: yellowgreen;
     padding-left: 80px;
     padding-right: 80px;
-}
-
-
-@media screen and(max-width:1536px) {
-    .wrapper{
-        max-width: 1366px;
+  }
+  
+  @media screen and (max-width: 1536px) {
+    .wrapper {
+      max-width: 1366px;
     }
-}
-@media screen and(max-width:1280px) {
-    .wrapper{
-        max-width: 1024px;
+  }
+  @media screen and (max-width: 1280px) {
+    .wrapper {
+      max-width: 1024px;
     }
-}
-@media screen and(max-width:1024px) {
-    .wrapper{
-        max-width: 768px;
-        padding-left: 40px;
-        padding-right: 40px;
+  }
+  @media screen and (max-width: 1024px) {
+    .wrapper {
+      max-width: 768px;
+      padding-left: 40px;
+      padding-right: 40px;
     }
-}
-@media screen and(max-width:768px) {
-    .wrapper{
-        max-width: 640px;
+  }
+  @media screen and (max-width: 768px) {
+    .wrapper {
+      max-width: 640px;
     }
-}
-@media screen and(max-width:640px) {
-    .wrapper{
-        max-width: 475px;
+  }
+  @media screen and (max-width: 640px) {
+    .wrapper {
+      max-width: 475px;
     }
-}
+  }
+  
+  .ql-container{
+    font-size: 28px !important;
+  }
+  
+  .quill > .ql-container > .ql-editor.ql-blank::before{
+    color: #b3b3b1;
+  }

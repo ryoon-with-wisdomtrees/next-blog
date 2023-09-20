@@ -3,12 +3,12 @@ import { ThemeContext } from "@/context/ThemeContext";
 import Image from "next/image";
 import React, { useContext } from "react";
 
-const Logo = () => {
+const Logo = ({ styles }) => {
   const { theme } = useContext(ThemeContext);
   console.log(theme);
+  const alwaysDark = "dark";
   return (
-    <>
-      {" "}
+    <div className={styles.social}>
       <Image
         src={`/assets/new/${theme}/Instagram.svg`}
         alt="Instagram"
@@ -30,7 +30,7 @@ const Logo = () => {
         height={24}
         style={{ cursor: "pointer" }}
       />
-    </>
+    </div>
   );
 };
 

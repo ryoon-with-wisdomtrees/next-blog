@@ -3,7 +3,7 @@ import "./globals.css";
 import Footer from "@/component/footer/Footer";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/providers/ThemeProvider";
-import { NanumSquare, NanumGothic } from "./fonts";
+import { NanumSquare, NanumGothic, NanumMyeongjo } from "./fonts";
 
 export const metadata = {
   title: "Ryoon.with.wisdomtree",
@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html>
-      <body className={NanumGothic.className}>
+      <body className={NanumMyeongjo.className}>
         <ThemeContextProvider>
           <ThemeProvider>
             <div className="container">

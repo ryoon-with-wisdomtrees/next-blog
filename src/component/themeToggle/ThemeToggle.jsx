@@ -7,14 +7,14 @@ import { ThemeContext } from "@/context/ThemeContext";
 const ToggleContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  // margin-top: 20px;
 `;
-
+// #4B4737
 const ToggleButton = styled.div`
   width: 40px;
   height: 20px;
-  background-color: ${({ isDarkMode }) => (isDarkMode ? "#333" : "#ccc")};
-  border-radius: 25px;
+  background-color: ${({ isDarkMode }) => (isDarkMode ? "#FFFF" : "#0f172a")};
+  border-radius: 50px;
   display: flex;
   align-items: center;
   padding: 2px;
@@ -23,9 +23,9 @@ const ToggleButton = styled.div`
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 
   .circle {
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    background-color: ${({ isDarkMode }) => (isDarkMode ? "#0f172a" : "#FFFF")};
     border-radius: 50%;
     transform: ${({ isDarkMode }) =>
       isDarkMode ? "translateX(20px)" : "translateX(0)"};
@@ -38,7 +38,6 @@ const ThemeToggle = () => {
 
   return (
     <>
-      {" "}
       <ToggleContainer>
         <ToggleButton
           onClick={toggle}
@@ -47,7 +46,7 @@ const ThemeToggle = () => {
           <div className="circle"></div>
         </ToggleButton>
       </ToggleContainer>
-      <span>{theme}</span>
+      {/* <span>{theme}</span> */}
     </>
   );
 };
