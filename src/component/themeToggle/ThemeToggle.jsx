@@ -13,7 +13,8 @@ const ToggleContainer = styled.div`
 const ToggleButton = styled.div`
   width: 40px;
   height: 20px;
-  background-color: ${({ isDarkMode }) => (isDarkMode ? "#FFFF" : "#0f172a")};
+  background-color: ${({ isdarkmode }) =>
+    isdarkmode === "light" ? "#FFFF" : "#0f172a"};
   border-radius: 50px;
   display: flex;
   align-items: center;
@@ -25,10 +26,11 @@ const ToggleButton = styled.div`
   .circle {
     width: 15px;
     height: 15px;
-    background-color: ${({ isDarkMode }) => (isDarkMode ? "#0f172a" : "#FFFF")};
+    background-color: ${({ isdarkmode }) =>
+      isdarkmode === "light" ? "#0f172a" : "#FFFF"};
     border-radius: 50%;
-    transform: ${({ isDarkMode }) =>
-      isDarkMode ? "translateX(20px)" : "translateX(0)"};
+    transform: ${({ isdarkmode }) =>
+      isdarkmode === "light" ? "translateX(20px)" : "translateX(0)"};
     transition: transform 0.3s ease-in-out;
   }
 `;
@@ -41,7 +43,9 @@ const ThemeToggle = () => {
       <ToggleContainer>
         <ToggleButton
           onClick={toggle}
-          isDarkMode={theme !== "light" ? true : false}
+          isdarkmode={
+            theme.toString() === "light" ? theme.toString() : undefined
+          }
         >
           <div className="circle"></div>
         </ToggleButton>

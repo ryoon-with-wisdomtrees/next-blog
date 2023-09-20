@@ -2,16 +2,32 @@ import React from "react";
 import styles from "./footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { SITE_CONFIG } from "../../../site.config";
+// import SITE_CONFIG from "../../../site.config";
+const d = new Date();
+const y = d.getFullYear();
+const from = +SITE_CONFIG.since;
 
 const Footer = () => {
   return (
     <div className={styles.container}>
       <div className={styles.info}>
-        <div className={styles.logo}>
-          <Image src="/logo.png" alt="lama blog" width={50} height={50} />
-          <h1 className={styles.logoText}>Lamablog</h1>
-        </div>
-        <p className={styles.desc}>
+        <a
+          href={`https://github.com/${SITE_CONFIG.profile.github}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className={styles.logo}>
+            <Image src="/avatar.png" alt="lama blog" width={50} height={50} />
+            <h1 className={styles.logoText}>
+              © {SITE_CONFIG.profile.name}{" "}
+              {from === y || !from ? y : `${from} - ${y}`}
+              {"✨"}
+            </h1>
+          </div>
+        </a>
+
+        {/* <p className={styles.desc}>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim
           necessitatibus similique aspernatur obcaecati veritatis. Aperiam cum
           porro sequi, totam minima consequuntur, aspernatur deleniti vero
@@ -22,9 +38,9 @@ const Footer = () => {
           <Image src="/instagram.png" alt="" width={18} height={18} />
           <Image src="/tiktok.png" alt="" width={18} height={18} />
           <Image src="/youtube.png" alt="" width={18} height={18} />
-        </div>
+        </div> */}
       </div>
-      <div className={styles.links}>
+      {/* <div className={styles.links}>
         <div className={styles.list}>
           <span className={styles.listTitle}>Links</span>
           <Link href="/">Homepage</Link>
@@ -46,7 +62,7 @@ const Footer = () => {
           <Link href="/">Tiktok</Link>
           <Link href="/">Youtube</Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

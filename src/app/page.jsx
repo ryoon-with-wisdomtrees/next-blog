@@ -5,6 +5,7 @@ import Link from "next/link";
 import CardList from "@/component/cardList/CardList";
 import Menu from "@/component/Menu/Menu";
 import Pagination from "@/component/pagination/Pagination";
+// import { currentUser } from "@clerk/nextjs";
 
 export default function Home() {
   return (
@@ -12,8 +13,8 @@ export default function Home() {
       <Featured />
       <CategoryList />
       <div className={styles.content}>
-        <CardList />
-        <Pagination />
+        {/* <CardList /> */}
+        {/* <Pagination /> */}
         <Menu />
       </div>
     </div>

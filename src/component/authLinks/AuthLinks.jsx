@@ -1,15 +1,26 @@
 "use client";
 import Link from "next/link";
 import styles from "./authLinks.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { signOut, useSession } from "next-auth/react";
-
+// import { currentUser } from "@clerk/nextjs";
+// import { useUser } from "@clerk/nextjs";
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
+  const { status } = useSession();
+  // const [status, setStatus] = useState(false);
 
-  const status = "unauthenticated";
-  // const { status } = useSession();
+  // const status = true;
+  // const { isLoaded, isSignedIn, user } = useUser();
 
+  // useEffect(() => {
+  //   console.log("isSignedIn: ", isSignedIn);
+  //   if (isSignedIn) {
+  //     setStatus(true);
+  //   }
+  // }, []);
+
+  // console.log(isLoaded, isSignedIn, user);
   return (
     <>
       {status === "unauthenticated" ? (
@@ -21,12 +32,7 @@ const AuthLinks = () => {
           <Link href="/write" className={styles.link}>
             Write
           </Link>
-          <span
-            className={styles.link}
-            onClick={() => {
-              console.log("Logout");
-            }}
-          >
+          <span className={styles.link} onClick={() => signOut()}>
             Logout
           </span>
         </>
