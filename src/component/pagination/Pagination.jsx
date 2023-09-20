@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./pagination.module.css";
 //import styles from "./cardList.module.css";
 const Pagination = () => {
-  return <div className="styles.container">Pagination</div>;
+  return <div className={styles.container}>Pagination</div>;
 };
 
 export default Pagination;

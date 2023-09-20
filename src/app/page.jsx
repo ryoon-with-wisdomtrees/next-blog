@@ -7,10 +7,10 @@ import Menue from "@/component/Menue/Menue";
 
 export default function Home() {
   return (
-    <div className="styles.container">
+    <div className={styles.container}>
       <Featured />
       <CategoryList />
-      <div className="styles.content">
+      <div className={styles.content}>
         <CardList />
         <Menue />
       </div>
